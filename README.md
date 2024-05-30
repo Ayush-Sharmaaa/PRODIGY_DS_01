@@ -51,7 +51,7 @@ You can customise the visualisation by making the following modifications to the
 # Examples
 Here's an example of how the age distribution bar chart might look:
 
-![download](https://github.com/AYUSH-SHARMA12/Prodigy-Tasks/assets/70780478/d0e7f634-3c89-4988-bf48-a44aaec416c7)
+![download](https://github.com/Ayush-Sharmaaa/Prodigy-Tasks/assets/70780478/d0e7f634-3c89-4988-bf48-a44aaec416c7)
 
 
 
