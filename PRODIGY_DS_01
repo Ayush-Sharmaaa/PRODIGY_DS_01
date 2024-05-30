@@ -1,0 +1,57 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np 
+import os
+os.chdir("C:\\Users\\Divya\\Desktop\\Folder")
+df = pd.read_excel("2.1_Population_dynamics.xlsx") 
+df
+df.shape
+df.info()
+df = pd.read_excel("2.1_Population_dynamics.xlsx") 
+print(df.columns)
+# Print unique values in 'Column5'
+print(df['Column5'].unique())
+
+# Print unique values in 'Column6'
+print(df['Column6'].unique())
+
+# Print unique values in 'Column7'
+print(df['Column7'].unique())
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the data from the Excel file
+df = pd.read_excel("2.1_Population_dynamics.xlsx")
+
+# Convert columns to numeric data types and handle missing values (replace with median age)
+df['Column5'] = pd.to_numeric(df['Column5'], errors='coerce')
+df['Column6'] = pd.to_numeric(df['Column6'], errors='coerce')
+df['Column7'] = pd.to_numeric(df['Column7'], errors='coerce')
+
+# Replace missing age values with the median age of the population
+median_age_column5 = df['Column5'].median()
+median_age_column6 = df['Column6'].median()
+median_age_column7 = df['Column7'].median()
+
+df['Column5'].fillna(median_age_column5, inplace=True)
+df['Column6'].fillna(median_age_column6, inplace=True)
+df['Column7'].fillna(median_age_column7, inplace=True)
+
+# Define age categories
+age_categories = ['0-14', '15-64', '65+']
+
+# Create a new DataFrame with columns for each age category
+df_stacked = df[['Column5', 'Column6', 'Column7']].copy()
+df_stacked.columns = age_categories
+
+# Calculate the sum of each age category
+total_population = df_stacked.sum()
+
+# Create a bar chart for age distribution
+plt.figure(figsize=(10, 6))
+plt.bar(age_categories, total_population)
+plt.xlabel('Age Category')
+plt.ylabel('Population Count')
+plt.title('Bar Chart for Age Distribution in the Population (2022)')
+plt.show()
+
