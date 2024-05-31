@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np 
 import os
-os.chdir("C:\\Users\\Divya\\Desktop\\Folder")
+os.chdir("C:\\Users\\Ayush\\Desktop\\Folder")
 df = pd.read_excel("2.1_Population_dynamics.xlsx") 
 df
 df.shape
